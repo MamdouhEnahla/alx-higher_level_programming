@@ -5,7 +5,7 @@
 /**
  * check_cycle - check code
  * @list: a pointer to list
- * 
+ *
  * Return: 0 or 1
  */
 int check_cycle(listint_t *list)
