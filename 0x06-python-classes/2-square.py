@@ -12,4 +12,3 @@ class Square:
             raise te("size must be an integer")
         except ValueError as ve:
             raise ve("size must be >= 0")
-
