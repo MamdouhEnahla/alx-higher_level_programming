@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 """Square"""
 
+
 class Square:
     """Square"""
 
