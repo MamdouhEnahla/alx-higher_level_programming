@@ -40,9 +40,16 @@ class Square:
         if self.__size == 0:
             print("")
             return
+        # print the top margin
+        print("\n" * self.__position[1], end="")
 
-        [print("") for i in range(0, self.__position[1])]
+        # print the square row by row
         for i in range(0, self.__size):
-            [print(" ", end="") for j in range(0, self.__position[0])]
-            [print("#", end="") for k in range(0, self.__size)]
+            # print the left margin
+            print(" " * self.__position[0], end="")
+            # print the square characters
+            print("#" * self.__size)
+        # print a newline at the end
         print()
+
+
