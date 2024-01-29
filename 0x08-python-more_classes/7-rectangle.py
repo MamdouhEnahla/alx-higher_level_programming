@@ -55,10 +55,10 @@ class Rectangle:
     def __str__(self):
         """printable string representation of the rectangle"""
 
-        if not self.__width or  not self.__height:
+        if not self.__width or not self.__height:
             return ""
-        return (str(self.print_symbol) * self.__width + "\n"
-                for j in range(self.__height))
+        return ((str(self.print_symbol) * self.__width + "\n") *
+                self.__height)[:-1]
 
     def __repr__(self):
         """string representation of the rectangle for production"""
