@@ -50,4 +50,3 @@ class Square:
             # print the square characters
             print("#" * self.__size, end="")
             print("")
-
