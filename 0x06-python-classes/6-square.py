@@ -48,5 +48,6 @@ class Square:
             # print the left margin
             print(" " * self.__position[0], end="")
             # print the square characters
-            print("#" * self.__size + "\n")
+            print("#" * self.__size, end="")
+            print("")
 
