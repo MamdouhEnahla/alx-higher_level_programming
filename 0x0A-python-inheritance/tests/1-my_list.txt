@@ -1,4 +1,4 @@
-#1-my_list.txt
+``1-my_list`` module
 Using 'MyList'
 ---------------------------
 
@@ -17,7 +17,12 @@ Using 'MyList'
 [1, 2, 3, 4, 5]
 [1, 4, 2, 3, 5]
 
->>> my_list = MyList("World")
+>>> my_list = MyList()
+>>> my_list.append('W')
+>>> my_list.append('o')
+>>> my_list.append('r')
+>>> my_list.append('l')
+>>> my_list.append('d')
 >>> print(my_list)
 >>> my_list.print_sorted()
 ['W', 'o', 'r', 'l', 'd']
@@ -28,7 +33,11 @@ Traceback (most recent call last):
 	...
 TypeError: 'NoneType' object is not iterable
 
->>> my_list = MyList([1, 3, 's', 'q'])
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(3)
+>>> my_list.append('s')
+>>> my_list.append('q')
 >>> print(my_list)
 >>> my_list.print_sorted()
 [1, 3, 's', 'q']
