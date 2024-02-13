@@ -34,7 +34,7 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """"Returns the JSON string representation of list_dictionaries"""
-        if !list_dictionaries:
+        if not (list_dictionaries):
             return "[]"
         return json.dump(list_dictionaries)
 
@@ -61,7 +61,7 @@ class Base:
         Args:
             **dictionary (dict): Key/value pairs of attributes to initialize.
         """
-        if dictionary and dictionary != {}:
+        if len(dictionary) > 0:
             if cls.__name__ == "Rectangle":
                 new = cls(1, 1)
             else:
