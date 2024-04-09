@@ -10,7 +10,7 @@ class Rectangle {
   print () {
     for (let i = 0; i < this.height; i++) {
       let side = '';
-      for (let j = 0; i < this.width; j++) {
+      for (let j = 0; j < this.width; j++) {
         side += 'X';
       }
       console.log(side);
