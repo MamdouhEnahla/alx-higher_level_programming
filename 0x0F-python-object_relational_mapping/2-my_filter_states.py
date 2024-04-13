@@ -12,7 +12,7 @@ if __name__ == "__main__":
                            password=password, database=db, charset="utf8")
     cur = conn.cursor()
     cur.execute("SELECT * FROM states
-                WHERE name LIKE BINARY '{}'").format(name)
+                WHERE name LIKE BINARY '{}'").format(name))
     states = cur.fetchall()
     for state in states:
         print(state)
