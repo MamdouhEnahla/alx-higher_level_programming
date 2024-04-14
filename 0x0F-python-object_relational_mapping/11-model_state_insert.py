@@ -25,5 +25,6 @@ def main():
     finally:
         session.close()
 
+
 if __name__ == "__main__":
     main()
