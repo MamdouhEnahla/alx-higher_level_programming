@@ -1,23 +1,24 @@
 #!/usr/bin/node
+const request = require('request');
+const address = 'https://swapi-api.alx-tools.com/api/films/' + process.argv[2];
 
-const axios = require('axios').default;
-const url = 'https://swapi-api.hbtn.io/api/films/' + process.argv[2];
-
-axios.get(url)
-  .then(function (response) {
-    getName(response.data.characters);
-  })
-  .catch(err => {
-    console.error(err);
-  });
-
-async function getName (charList) {
-  try {
-    for (const url of charList) {
-      const resp = await axios.get(url);
-      console.log(resp.data.name);
+request(address, function (error, response, body) {
+  if (error) {
+    console.log(error);
+  } else {
+    const results = JSON.parse(body).characters;
+    const promises = [];
+    for (const i of results) {
+      promises.push(
+        new Promise(function (resolve, reject) {
+          request(i, (e, r, b) => resolve(JSON.parse(b).name));
+        })
+      );
     }
-  } catch (err) {
-    console.error(err);
+    Promise.all(promises).then((a) => {
+      for (const i of a) {
+        console.log(i);
+      }
+    });
   }
-}
+});

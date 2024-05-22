@@ -1,16 +1,18 @@
 #!/usr/bin/node
+const request = require('request');
+const address = process.argv[2];
 
-const axios = require('axios').default;
-axios.get(process.argv[2])
-  .then(function (response) {
-    const movies = response.data.results;
+request(address, function (error, response, body) {
+  if (error) {
+    console.log(error);
+  } else {
+    const results = JSON.parse(body).results;
     let count = 0;
-    movies.forEach(dict => {
-      for (const chars of dict.characters) {
-        if (chars.includes('people/18/')) {
-          count += 1;
-        }
+    for (const i in results) {
+      for (const chr of results[i].characters) {
+        if (chr.search('/18/') > 0) { count += 1; }
       }
-    });
+    }
     console.log(count);
-  });
+  }
+});
