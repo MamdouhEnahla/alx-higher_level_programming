@@ -12,7 +12,7 @@ def find_peak(list_of_integers):
     Complexity:
         The algorithm has O(log(n)) complexity.
     """
-    if not list_of_integres:
+    if not list_of_integers:
         return None
 
     left, right = 0, len(list_of_integers) - 1
